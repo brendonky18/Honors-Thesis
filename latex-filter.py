@@ -2,32 +2,52 @@ import sys
 import regex
 
 
+NL_REPLACE = "%%"
+
 def smudge():
     for line in sys.stdin:
         # Smudge remote when pulling to local
-
-        pass
+        workingLine = ""
+        for line in sys.stdin:
+            # print(line)
+            # print(replace)
+            # print(replace in line)
+            if NL_REPLACE in line:
+                workingLine += line.replace(NL_REPLACE, "")
+            else:
+                print(workingLine+line)
+                workingLine = ""
+        
+        # print if it didn't on the last run
+        if workingLine != "":
+            print(workingLine)
 
 # clean local before commit to remote
 def clean():
-    readingFromDocBody = False
+    # readingFromDocBody = False
+    readingFromDocBody = True
     for line in sys.stdin:
+        # print(f"line: {line}")
         # only parse within the document body
-        punctuationRegex = "((?<!et|al|[A-Z])([\?|\!|\.|;]) )|---|%.*"
+        punctuationRegex = "((?:(?<!et|al|[A-Z])[\.]|(?:[\?|\!|;])) |---)"
         
         # captures punctuation marks, but ignores those in comments
-        commentRegex = "(?(?=%)(?:.*)\n|((?:(?<!et|al|[A-Z])(?:[\?|\!|\.|;]) )|---))"
+        commentRegex = "(?(?=%)(?:.*)\n|((?:(?<!et|al|[A-Z])[\.]|(?:[\?|\!|;])) |---))"
         if readingFromDocBody:
-            resultListItr = iter(regex.split(commentRegex), line)
+            splitList = regex.split(commentRegex, line)
+            # print(splitList)
+            resultListItr = iter(splitList)
 
             nextItem = next(resultListItr)
+            # print(nextItem is not None)
             while nextItem is not None:
                 curItem, nextItem = nextItem, next(resultListItr)
+                # print(f"nextitem: [{nextItem}]")
 
                 # next item is punctuation, so combine them
                 if regex.match(punctuationRegex, nextItem) is not None:
-                    print(curItem + nextItem + "%break%")
-                    next(resultListItr)
+                    print(curItem + nextItem + NL_REPLACE)
+                    nextItem = next(resultListItr)
                 else:
                     print(curItem)
 
