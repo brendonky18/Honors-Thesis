@@ -1,5 +1,7 @@
 # custom
 Supplementary/
+# automatically handled by GH actions now
+*.pdf 
 
 # submodules
 Readings/
