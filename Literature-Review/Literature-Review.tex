@@ -23,112 +23,13 @@
     \large Exploring Alternative Modes of Education in Cybersecurity
 }
 \author{Brendon Ky}
-\date{\today}
+\date{December 2021}
 
 \begin{document}
 
 \maketitle
 
-\section{Abstract}
-
-    There is a commonly recurring complaint found across the literature regarding cybersecurity education:
-    there is little cohesion among academics and professionals regarding pedagogical standards and expectations within the field. 
-    Cybersecurity was, and still is, a job principally carried out by IT professionals; 
-    as a result, until recently, all interest in creating educational materials for the field has been tailored towards developing skills for those working professionals rather than establishing an educational foundation suitable for students in an undergraduate program. 
-    Due to this bias, the growing ubiquity of digital technologies has created a massive disparity between the number of qualified cybersecurity professionals and the number needed to sustain this growth. 
-    
-    Combined, these aforementioned factors create a strong pressure towards the development of a consensus---not only on the content of educational programs, but also the most effective way in which it can be taught. 
-    This literature review seeks to examine the extant body of literature in regards to cybersecurity education, in order to identify gaps in the literature as a vector for future research.
-
-\section{Methods}
-
-    A literature search was conducted through the ACM Digital Library, IEEE Xplore, and Google Scholar in order to identify relevant articles pertaining to the issue of education in cyber security, as well as other relevant publications found through references.
-
-\section{Analysis}
-
-    Nearly all of the publications I reviewed revolved around a single core observation --- 
-    that cybersecurity is a relatively young academic discipline.
-    Consequently, there is little consensus regarding what standards should be adopted for students \cite{R-Raj}, how such material could most optimally be taught, and that far more extensive discussion, research, and study is required \cite{Z-Zeng}. 
-    An area which has received a heightened amount of attention is the potential for alternative modes of teaching, as opposed to, or as supplements for, more traditional lecture-based education \cite{Z-Zeng,N-Eliot,E-Gavas,C-Herr,K-Chung, C-Kussmaul,K-Leune,B-Payne,L-Thomas}. 
-    These alternative approaches can broadly be divided into two categories, which can be referred to as \emph{hands-on activities} and \emph{collaborative learning} \cite{P-Deshpande,C-Kussmaul,B-Payne}.
-
-\subsection{Hands-On Activities}
-
-    The vast majority of these discussions specifically focus on hands-on activities where students are able to apply what they have previously learned, but within this microcosm there is little clarity about which kinds of activities would be most beneficial.     
-    These hands-on materials are believed to have a number of advantages, many of which are particularly relevant to cybersecurity. For instance, there is already a well established tradition within cybersecurity of hands-on competitive learning exercises. 
-    Challenges such as Capture-the-Flags (CTFs) and King of the Hill, where participants attempt to gain access to a system as part of a competition, are already common activities for cybersecurity professionals to partake and compete in; 
-    as such, there is already a great amount of expertise and resources when it comes to designing such activities. 
-    Furthermore, owing to their familiarity, it would be much easier to incorporate some of these concepts into more academic teaching environments of cybersecurity.
-
-    The work presented by Petrilli and Leune examines the potential of these activities through two case studies. 
-    They found that when using CTFs in concert with traditional lectures, students reported that they felt more confident in their abilities than they did before the activities, and that they were more able to meet the intended learning outcomes. 
-
-    Unfortunately, as case studies, these examples can’t be interpreted as definitive proof of the superior efficacy of lab-based instruction. 
-    The case studies conducted by Petrilli and Leune each only followed a single class run by a single professor over the course of a single semester, and they only surveyed a small subset of students who volunteered to participate. 
-    Furthermore, their case studies only measured the student outcomes against the intended learning outcomes of the lab. 
-    Neither study had a control group present against which it would be possible to measure the relative effect of using these labs against other teaching methods. 
-    As such, while they may be indicative of the potential for lab-based learning, it is impossible to make a definitive determination from their conclusions.
-
-    Another study done by Z. Zeng et. al., similarly examined the use of hands-on activities in an academic setting to complement lectures \cite{Z-Zeng}. 
-    Rather than CTFs, students were asked to perform various activities which they called \say{labs}. 
-    Rather than attempting to investigate the utility of such labs, as Petrilli and Leune did, their research is predicated on this fact, citing earlier research demonstrating such. 
-    Instead of arguing the legitimacy of its utility, they investigated what the learning process looks like while using these activities. 
-    In their research, they sought to determine what factors surrounded the lab and to investigate which would result in the best educational outcomes. 
-    Ultimately, they found that spending more time reviewing instructional materials and spending more time performing the lab activities was strongly correlated with better educational outcomes. 
-    Unfortunately---and as the authors acknowledge---the research presented is only preliminary, and while it offers some interesting indications, it is impossible to make any definitive determinations solely from what was presented. 
-    A similar trend can be found across numerous reviewed papers\cite{Y-Deng,W-Du,N-Eliot}. 
-    All of the aforementioned papers present a design framework for some kind of educational hands-on activities, which are accompanied by theoretical justifications for their design, and case studies affirming their efficacy. 
-    However, none of them attempt to empirically examine how or why these approaches are effective, and what advantages (if any) they have over conventional approaches. 
-
-    While the papers presenting these frameworks may fail to rigorously examine the educational value of their proposed frameworks, papers by Sweller et. al. and Weiss et. al. attempt to address this exact question \cite{J-Sweller,R-Weiss}. 
-    In an analysis of dozens of other studies, the paper by Sweller et. al. comes to the conclusion that despite existing prevailing trends within education, the use of entirely self-guided activities has a marginal---if not detrimental---impact on student learning when compared to more direct approaches. 
-    According to their findings, it is far more beneficial to give students the information they need to complete an activity, rather than relying on the students to discover that information themselves. 
-    Forcing students to discover information themselves is detrimental to the learning process; 
-    the problem solving required to complete challenges independently occupies a great amount of mental bandwidth, to the extent that it becomes difficult for students to absorb and learn the material presented. 
-    They further argue that forcing students to learn information on their own without any guidance leads to frustration and the development of misconceptions, both of which also have a net negative impact on learning. 
-    A case study by Thomas et. al. would seem to corroborate this belief \cite{L-Thomas}. 
-    They found that when introducing students of varying experience to a cybersecurity competition, novices reported feeling intimidated and unmotivated due to their lack of knowledge; 
-    however after being provided with additional training, they reported feeling more confident. 
-
-    The paper by Weiss et. al., moderates on the previous stance. 
-    It acknowledges the popularity of self-guided learning, along with the substantial body of evidence opposed to it, and attempts to reconcile the two. 
-    They use the well-established schema theory to justify the prevalence of self-guided learning, arguing that in order for information to be usefully applied later, it must be incorporated into an individual’s mental model for a subject. 
-    Requiring students to discover information gives them the opportunity to analyze each piece of information and gradually construct the necessary mental model, more so than simply being given the information. 
-
-    To reconcile these two aims, they propose that while a student is left to work on the problem without any immediate guidance, their actions will be bounded by feedback provided to them over the course of the activity. 
-    In this way, students are able to work on the problems independently---their ability to make mistakes and become frustrated is bounded by the feedback. 
-
-\subsection{Collaborative Learning}
-
-    While most of the discussion in cybersecurity education centers on the potential for hands-on learning, there is another notable theme which appeared in several other publications. 
-    Works by Deshpande, Kussmaul, and Payne all present the potential of \emph{collaborative learning} \cite{P-Deshpande,C-Kussmaul,B-Payne}. 
-    While taking slightly different approaches, they all revolve around the central principle of collaboration as a key component of the educational environment---where students are encouraged to discuss, ask questions, and work collectively towards some learning objective previously established by the instructor. 
-    Importantly, in all three approaches, the discussions students engage in are heavily guided by the instructor, where they will determine questions, topics, and/or goals which students will discuss and work towards. 
-
-\subsection{Pedagogical Frameworks}
-
-    Unfortunately, many of the frameworks and approaches previously discussed are only explored through small, individual case studies. 
-    While many reference other work upon which their approaches are based, only the method proposed by Deshpande et. al. was tested in a thorough controlled study performed on the approach’s efficacy. 
-    Only when moving beyond the realm of cybersecurity and into the field of education was I able to find a substantial body of rigorous, empirically-validated approaches to designing educational materials. 
-
-    A paper by Linehan et. al. examines the educational potential of designing games based on the model of \emph{Applied Behavioral Analysis} (henceforth referred to as ABA) \cite{C-Linehan}. 
-    While ABA itself does not strictly mandate hands-on work, Linehan explores how approaches in video game design closely resemble the pedagogical principles of ABA. 
-    His work ultimately suggests that through careful and deliberate design, it should be entirely possible to design hands-on educational games, based on empirically validated approaches to teaching. 
-    While the discussion in the paper specifically concerns the use and development of video games for educational purposes, there is no reason why the principles cannot be extrapolated to apply to other kinds of interactive educational activities. 
-    As such, this paper can be used as a pedagogical framework to inform the design of labs, CTFs, or other hands-on educational activities, 
-    offering a concrete, rigorously demonstrated pedagogical framework around which the earlier discussions of Sweller and Weiss can be contextualized. 
-
-\section{Conclusion}
-
-    From this analysis, it is clear that there is a great deal of interest and potential in the area of using alternative approaches---and in particular hands-on activities---to assist in teaching cybersecurity. 
-    Despite this confluence of factors, there is virtually no body of research which rigorously investigates this topic. 
-    As such, and as many of the papers correctly identified, there is a substantial need to examine the numerous proposed frameworks and their theoretical underpinnings in a controlled and rigorous manner. 
-
-    In light of cybersecurity’s growing recognition as a serious area of academic study and its paramount importance to life in the digital age, it is essential that sound pedagogical approaches are developed. 
-    In order to bridge this gap, I would like to conduct research into this specific topic as part of my thesis. 
-    To quantitatively evaluate the merits of hands-on learning and the various design philosophies surrounding the issue, I would develop educational activities based on the various previously discussed approaches and test them in a controlled classroom environment. 
-    With the goal of assessing their effectiveness relative to each other, as well as relative to a lecture-based approach. 
-
+\input{Literature-Review-body.tex}
 
 \printbibliography
 \end{document}
