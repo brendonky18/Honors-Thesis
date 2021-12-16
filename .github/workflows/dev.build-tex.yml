@@ -1,0 +1,35 @@
+name: Development Workflow - Build LaTeX
+on: push
+jobs:
+  build-literature-review:
+    name: Build Literature Review
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: compile Literature Review
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: Literature-Review.tex
+        working_directory: Literature-Review/
+    - name: Upload PDFs
+      uses: actions/upload-artifact@v2
+      with:
+        name: Literature-Review
+        path: Literature-Review/Literature-Review.pdf
+  build-research-proposal:
+    name: Build Research Proposal
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: compile Research Proposal
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: Research-Proposal.tex
+        working_directory: Research/
+    - name: Upload PDFs
+      uses: actions/upload-artifact@v2
+      with:
+        name: Research-Proposal
+        path: Research/Research-Proposal.pdf

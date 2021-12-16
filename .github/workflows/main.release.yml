@@ -1,0 +1,27 @@
+name: Master Workflow - Build and deploy to production
+on:
+  pull_request:
+    types: closed
+    branches:
+      - fancifying
+    tags:
+      - test-*
+jobs:
+  release-literature-review:
+    name: Release Literature Review
+    runs-on: ubuntu-latest
+    needs: build-literature-review
+    steps:
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: test-release-file.txt
+  release-research-proposal:
+    name: Release Research Proposal
+    runs-on: ubuntu-latest
+    needs: build-research-proposal
+    steps:
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Research/Research-Proposal.pdf
